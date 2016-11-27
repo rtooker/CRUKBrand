@@ -12,7 +12,7 @@ getFootnotesText <- function() {
   footnotes <- c(footnotes, "You are welcome to reuse this Cancer Research UK statistics content for your own work.")
   footnotes <- c(footnotes, "Credit us as authors by referencing Cancer Research UK as the primary source.")
   footnotes <- c(footnotes, "Suggested style: Cancer Research UK, full URL of the page, Accessed [month] [year].")
-  
+
   footnote <- paste(footnotes, collapse="\n")
   return (footnote)
 }
@@ -32,7 +32,7 @@ getFootnotesGrob <- function(footNoteText=NULL) {
   } else {
     footnote <- footNoteText
   }
-  
+
   # concatenate elements of vector with newline between each (paste) and create graphical object (textGrob)
   footnoteGrob <- textGrob(footnote, x = 0.05, y=0.7, just = "left", vjust=1, gp = gpar(fontface = "italic", fontsize = 8))
   return(footnoteGrob)
@@ -70,8 +70,8 @@ applyCRUKBrand <- function (plot) {
   # basic stylings
   theme_set(theme_bw(12))
   plot <- plot + theme(plot.title = element_text(lineheight=10, face="italic"))
-  
-  
+
+
   # https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html
   # create a grid layout with 5 x 4 to combine plot, footnote, and logo
   # 1 = plot, 2 = footnotes, 3 = logo
@@ -81,7 +81,7 @@ applyCRUKBrand <- function (plot) {
                c(2,2,2,3,3))
 
   gs = list(p, getFootnotesGrob(), getCRUKLogo())
-  
+
   # arrange grid, use blank text to create border (better way???)
   g <- arrangeGrob(grobs=gs, layout_matrix = lay, bottom="", right="", left="", top="")
   return(g)
