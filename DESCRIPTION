@@ -1,0 +1,18 @@
+Package: CRUKBrand
+Title: Applies CRUK branding and footer text to plots
+Version: 0.0.0.9000
+Authors@R: person("Robert", "Tooker", email = "robert.tooker@cancer.org.uk", role = c("aut", "cre"))
+Description: Applies standarised branding to plots, adding footer text, CRUK
+    logo, and formatting for labels and data points.
+Depends:
+    R (>= 3.3.2)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports:
+    ggplot2,
+    grid,
+    gridExtra,
+    lattice,
+    png
+RoxygenNote: 5.0.1
