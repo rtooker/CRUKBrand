@@ -1,3 +1,8 @@
+library(ggplot2)
+library(grid)
+library(gridExtra)
+library(lattice)
+
 #' Get Footnotes Text
 #'
 #' This function returns the footnotes text
