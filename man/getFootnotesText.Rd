@@ -6,6 +6,9 @@
 \usage{
 getFootnotesText()
 }
+\value{
+The footnotes text
+}
 \description{
 This function returns the footnotes text
 }

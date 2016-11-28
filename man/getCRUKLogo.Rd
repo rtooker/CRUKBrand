@@ -6,6 +6,9 @@
 \usage{
 getCRUKLogo()
 }
+\value{
+The CRUK logo graphical object
+}
 \description{
 This function returns the CRUK Logo at 25% of the png (bottom right quarter)
 }

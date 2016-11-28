@@ -9,6 +9,9 @@ getFootnotesGrob(footNoteText = NULL)
 \arguments{
 \item{footNoteText}{If NA then will use default text}
 }
+\value{
+The footnotes graphical object
+}
 \description{
 This function returns the footnotes graphical object
 }

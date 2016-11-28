@@ -9,6 +9,9 @@ applyCRUKBrand(plot)
 \arguments{
 \item{plot}{the plot}
 }
+\value{
+A branded plot including footnotes and logo if required
+}
 \description{
 This function takes a plot and applies the CRUK brand and standard footnote text
 }
