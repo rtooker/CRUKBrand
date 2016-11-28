@@ -35,7 +35,7 @@ getFootnotesGrob <- function(footNoteText=NULL) {
   }
 
   # concatenate elements of vector with newline between each (paste) and create graphical object (textGrob)
-  footnoteGrob <- textGrob(footnote, x = 0.05, y=0.7, just = "left", vjust=1, gp = gpar(fontface = "italic", fontsize = 8))
+  footnoteGrob <- textGrob(footnote, x = 0.05, y=0.7, just = "left", vjust=1, gp = gpar(fontface = "italic", fontsize = 8, col="#2E008B"))
   return(footnoteGrob)
 }
 #' Get CRUK Logo Graphical Objects
@@ -75,13 +75,15 @@ applyCRUKBrand <- function (plot) {
   # plot formatting
   textCol = "#2E008B"
   plot <- plot +
-    theme(plot.title = element_text(lineheight=10, face="italic", colour="#2E008B")) +
-    theme(axis.line = element_line(colour=textCol)) +
-    theme(axis.ticks = element_line(colour=textCol)) +
-    theme(axis.text = element_line(colour=textCol)) +
+    theme(plot.title = element_text(lineheight=10, face="italic", colour=textCol)) +
+    theme(plot.subtitle = element_text(colour=textCol)) +
+    theme(axis.text = element_text(colour=textCol)) +
     theme(axis.title.x = element_text(colour=textCol)) +
     theme(axis.title.y = element_text(colour=textCol)) +
     theme(legend.title = element_text(colour=textCol)) +
+    theme(panel.border = element_rect(colour=textCol)) +
+    theme(axis.line = element_line(colour=textCol)) +
+    theme(axis.ticks = element_line(colour=textCol)) +
     scale_colour_manual(values=cbPalette) +
     scale_fill_manual(values=cbPalette)
 
