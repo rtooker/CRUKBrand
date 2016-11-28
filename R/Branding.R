@@ -17,7 +17,6 @@ getFootnotesText <- function() {
   footnote <- paste(footnotes, collapse="\n")
   return (footnote)
 }
-
 #' Get Footnotes Graphical Object
 #'
 #' This function returns the footnotes graphical object
@@ -39,8 +38,6 @@ getFootnotesGrob <- function(footNoteText=NULL) {
   footnoteGrob <- textGrob(footnote, x = 0.05, y=0.7, just = "left", vjust=1, gp = gpar(fontface = "italic", fontsize = 8))
   return(footnoteGrob)
 }
-
-
 #' Get CRUK Logo Graphical Objects
 #'
 #' This function returns the CRUK Logo at 25% of the png (bottom right quarter)
@@ -58,7 +55,6 @@ getCRUKLogo <- function() {
   gs <- list(logo)
   return(arrangeGrob(grobs = gs, layout_matrix = lay))
 }
-
 #' Apply brand to plot
 #'
 #' This function takes a plot and applies the CRUK brand and standard footnote text
@@ -77,10 +73,17 @@ applyCRUKBrand <- function (plot) {
   cbPalette <- c("#2E008B", "#EC008C", "#00B6ED", "A7A8AA", "AB99D1", "F799D1", "99E2F8")
 
   # plot formatting
+  textCol = "#2E008B"
   plot <- plot +
-    theme(plot.title = element_text(lineheight=10, face="italic")) +
-    scale_colour_manual(values=cbPalette)
-
+    theme(plot.title = element_text(lineheight=10, face="italic", colour="#2E008B")) +
+    theme(axis.line = element_line(colour=textCol)) +
+    theme(axis.ticks = element_line(colour=textCol)) +
+    theme(axis.text = element_line(colour=textCol)) +
+    theme(axis.title.x = element_text(colour=textCol)) +
+    theme(axis.title.y = element_text(colour=textCol)) +
+    theme(legend.title = element_text(colour=textCol)) +
+    scale_colour_manual(values=cbPalette) +
+    scale_fill_manual(values=cbPalette)
 
   # https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html
   # create a grid layout with 5 x 4 to combine plot, footnote, and logo
@@ -95,5 +98,4 @@ applyCRUKBrand <- function (plot) {
   # arrange grid, use blank text to create border (better way???)
   g <- arrangeGrob(grobs=gs, layout_matrix = lay, bottom="", right="", left="", top="")
   return(g)
-
 }
