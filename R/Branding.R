@@ -90,7 +90,7 @@ applyCRUKBrand <- function (plot) {
                c(1,1,1,1,1),
                c(2,2,2,3,3))
 
-  gs = list(p, getFootnotesGrob(), getCRUKLogo())
+  gs = list(plot, getFootnotesGrob(), getCRUKLogo())
 
   # arrange grid, use blank text to create border (better way???)
   g <- arrangeGrob(grobs=gs, layout_matrix = lay, bottom="", right="", left="", top="")
