@@ -66,7 +66,13 @@ getCRUKLogo <- function() {
 #' g <- applyCRUKBrand(plot)
 #' grid.draw(g)
 applyCRUKBrand <- function (plot) {
-  # basic stylings
+  library(ggplot2)
+  library(grid)
+  library(gridExtra)
+  library(lattice)
+  library(png)
+
+    # basic stylings
   theme_set(theme_bw(12))
 
   # palette
